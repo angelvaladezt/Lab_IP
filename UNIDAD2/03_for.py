@@ -1,5 +1,5 @@
 # Trabajando con rangos con for
-for numero in range(1, 4, 2):
+for numero in range(1, 3, 2):
     cuadrado = numero ** 2
     print(numero, cuadrado)
 
