@@ -13,5 +13,6 @@ if es_mayor and documento_valido and sin_adeudo:
     autorizado = True
 else:
     autorizado = False
+       
 autorizado = es_mayor and documento_valido and sin_adeudo
 print(autorizado)
