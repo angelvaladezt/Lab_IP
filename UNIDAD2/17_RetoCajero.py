@@ -1,3 +1,13 @@
+def login():
+    Usuario = "alumno"
+    Clave = "python123"
+    usuario= input("Usuario: ").strip().lower()
+    clave= input("Clave: ").strip()
+    if usuario == Usuario and clave == Clave:
+       main()
+    else:
+        print("Credenciales incorrectas")
+        
 def consultar_saldo():
     print("Saldo: $0.00")
 def depositar ():
@@ -17,7 +27,7 @@ def mostrar_menu():
 
 def main():
     while True:
-        opcion = input("Opción: ").strip()
+        opcion = mostrar_menu()
         if opcion == "1":
             consultar_saldo()
         elif opcion == "2":
@@ -29,9 +39,4 @@ def main():
             break
         else:
             print("Opción inválida")
-        if usuario == USUARIO and clave == CLAVE:
-        print("Bienvenido")
-        else:
-        print("Credenciales incorrectas")
-main()
-
+login()
