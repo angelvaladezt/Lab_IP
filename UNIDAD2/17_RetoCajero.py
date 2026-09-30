@@ -1,13 +1,14 @@
 def login():
-    Usuario = "alumno"
-    Clave = "python123"
-    usuario= input("Usuario: ").strip().lower()
-    clave= input("Clave: ").strip()
-    if usuario == Usuario and clave == Clave:
+    USUARIO = "alumno"
+    CLAVE = "python123"
+
+    usuario = input("Usuario: ").strip().lower()
+    clave = input("Clave: ").strip()
+    
+    if usuario == USUARIO and clave == CLAVE:
        main()
     else:
         print("Credenciales incorrectas")
-        
 def consultar_saldo():
     print("Saldo: $0.00")
 def depositar ():
@@ -15,15 +16,15 @@ def depositar ():
 def retirar():
     print("Retiro seleccionado")
 def salir():
-    print("Saliendo del cajero automatico...")
+    print("Saliendo del cajero automático ...")
 
 def mostrar_menu():
-    print("Bienvenido al cajero automatico")
+    print("Bienvenido al cajero automático ")
     print("1. Consultar saldo")
     print("2. Depositar")
     print("3. Retirar")
     print("4. Salir")
-    return input("Opcion: ").strip()
+    return input("Opción: ").strip()
 
 def main():
     while True:
