@@ -7,3 +7,4 @@ while True:
 
 nombre_normalizado = nombre.title()
 print(f"Hola, {nombre_normalizado}")
+
