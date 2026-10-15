@@ -30,3 +30,5 @@ def obtener_configuracion():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+

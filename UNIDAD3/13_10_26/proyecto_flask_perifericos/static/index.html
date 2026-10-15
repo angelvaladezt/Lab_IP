@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ejemplo práctico de interfaz web conectada con Flask y Python mediante JSON.">
+  <title>Panel de periféricos</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <img id="brandImage" class="brand-image" src="/images/ingenieria_software.png" alt="Ingeniería de Software">
+    <div>
+      <p class="eyebrow">Laboratorio de Introducción a la Programación</p>
+      <h1 id="appTitle">Cargando interfaz…</h1>
+      <p id="appSubtitle" class="subtitle">Solicitando datos a Python.</p>
+    </div>
+    <a id="dataLink" class="data-link" href="/api/config">Ver datos</a>
+  </header>
+
+  <main class="page-shell">
+    <section id="loginPanel" class="card login-card" aria-labelledby="loginTitle">
+      <div>
+        <span class="step">01</span>
+        <h2 id="loginTitle">Inicio de sesión</h2>
+        <p id="welcomeText">Espera mientras se carga la configuración.</p>
+        <p class="demo-credentials"><strong>Demo:</strong> alumno / python123</p>
+      </div>
+
+      <form id="loginForm" novalidate>
+        <div class="field">
+          <label for="userInput">Usuario</label>
+          <input id="userInput" name="usuario" autocomplete="username" required>
+        </div>
+        <div class="field">
+          <label for="passwordInput">Contraseña</label>
+          <input id="passwordInput" name="clave" type="password" autocomplete="current-password" required>
+        </div>
+        <button id="loginButton" type="submit">Ingresar</button>
+        <p id="loginStatus" class="status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="applicationPanel" class="app-panel" hidden>
+      <div class="app-toolbar">
+        <p id="sessionText">Sesión activa</p>
+        <nav id="mainMenu" aria-label="Menú principal"></nav>
+      </div>
+
+      <section id="inicio" class="view card">
+        <span class="step">02</span>
+        <h2>Inicio</h2>
+        <p>El menú, los textos, el enlace, la imagen y las opciones del formulario provienen de Python como JSON. JavaScript los inserta en este documento.</p>
+        <div class="component-grid">
+          <article><strong>Etiqueta</strong><span>Explica el campo</span></article>
+          <article><strong>Botón</strong><span>Inicia una acción</span></article>
+          <article><strong>Enlace</strong><span>Navega a un recurso</span></article>
+          <article><strong>Imagen</strong><span>Apoya la identidad visual</span></article>
+        </div>
+      </section>
+
+      <section id="registro" class="view card" hidden>
+        <span class="step">03</span>
+        <h2>Formulario de periféricos</h2>
+        <form id="deviceForm" novalidate>
+          <div class="form-grid">
+            <div class="field full">
+              <label for="deviceName">Nombre del periférico</label>
+              <input id="deviceName" name="nombre" minlength="3" required>
+              <small id="nameError" class="field-error"></small>
+            </div>
+            <div class="field">
+              <label for="deviceType">Tipo</label>
+              <select id="deviceType" name="tipo" required></select>
+              <small id="typeError" class="field-error"></small>
+            </div>
+            <div class="field">
+              <label for="deviceQuantity">Cantidad</label>
+              <input id="deviceQuantity" name="cantidad" type="number" min="1" max="50" value="1" required>
+              <small id="quantityError" class="field-error"></small>
+            </div>
+          </div>
+          <button id="saveButton" type="submit">Guardar</button>
+          <p id="formStatus" class="status" role="status" aria-live="polite"></p>
+        </form>
+        <div class="records-heading">
+          <h3>Registros</h3>
+          <span id="recordCount">0 elementos</span>
+        </div>
+        <ul id="recordList" class="record-list"></ul>
+      </section>
+
+      <section id="ayuda" class="view card" hidden>
+        <span class="step">04</span>
+        <h2>Ayuda</h2>
+        <p>Usa Tab para recorrer controles y Enter para activar el botón enfocado. Los mensajes de estado se anuncian mediante regiones vivas.</p>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>Unidad 4 · Dr. Alejandro Morgan</p>
+  </footer>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
